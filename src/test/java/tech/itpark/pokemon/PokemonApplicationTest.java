@@ -5,12 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -163,16 +160,16 @@ class PokemonApplicationTest {
 
         mockMvc.perform(
                 post("/pokemon")
-                .contentType("application/json")
-                .content("{\n" +
-                        "  \"id\": 0,\n" +
-                        "  \"name\": \"Мэджикарп\",\n" +
-                        "  \"pokedex\": 129,\n" +
-                        "  \"evolves\": 1,\n" +
-                        "  \"type_id\": 6,\n" +
-                        "  \"weight\": 10,\n" +
-                        "  \"species\": \"Покемон-Рыба\"\n" +
-                        "}")
+                        .contentType("application/json")
+                        .content("{\n" +
+                                "  \"id\": 0,\n" +
+                                "  \"name\": \"Мэджикарп\",\n" +
+                                "  \"pokedex\": 129,\n" +
+                                "  \"evolves\": 1,\n" +
+                                "  \"type_id\": 6,\n" +
+                                "  \"weight\": 10,\n" +
+                                "  \"species\": \"Покемон-Рыба\"\n" +
+                                "}")
         )
                 .andExpect(
                         content()
@@ -535,14 +532,5 @@ class PokemonApplicationTest {
                                         "  }\n" +
                                         "]\n")
                 );
-
-
-
-
-
-
-
-
-
     }
 }
