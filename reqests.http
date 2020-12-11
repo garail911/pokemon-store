@@ -1,0 +1,54 @@
+//getALL
+GET https://pokemon-store.herokuapp.com/pokemon
+
+###
+//by id
+GET https://pokemon-store.herokuapp.com/pokemon/2
+
+###
+//Search
+GET https://pokemon-store.herokuapp.com/pokemon/search/Пикачу
+
+###
+//by type
+GET https://pokemon-store.herokuapp.com/pokemon/type/6
+
+###
+//save
+POST https://pokemon-store.herokuapp.com/pokemon
+Content-Type: application/json
+
+{
+  "id":0,
+  "name":"Мэджикарп",
+  "pokedex":129,
+  "evolves":1,
+  "type_id":6,
+  "weight":10,
+  "species":"Покемон-Рыба"
+}
+
+###
+//update
+POST https://pokemon-store.herokuapp.com/pokemon
+Content-Type: application/json
+
+{
+  "id":11,
+  "name":"Гаярадос",
+  "pokedex":130,
+  "evolves":2,
+  "type_id":6,
+  "weight":235,
+  "species":"Водный летающий дракон"
+}
+
+###
+//pokemonEgg
+GET https://pokemon-store.herokuapp.com/pokemon/egg
+
+###
+//remove
+DELETE https://pokemon-store.herokuapp.com/pokemon/11
+
+
